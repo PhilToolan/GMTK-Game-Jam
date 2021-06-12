@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Player : PhysicsObject
+public class Player2 : PhysicsObject
 {
     [Header("Attributes")]
     [SerializeField] private float attackDuration; //How long is the attackBox active when attacking?
     [SerializeField] private float jumpPower = 10;
     [SerializeField] private float maxSpeed = 1;
-    [SerializeField] private float fallForgiveness = 1; //This is the amount of seconds the player has after falling from a ledge to be able to jump
-    [SerializeField] private float fallForgivenessCounter; //This is the simple counter that will begin the moment the player falls from a ledge
+    [SerializeField] private float fallForgiveness = 1; //This is the amount of seconds the Player2 has after falling from a ledge to be able to jump
+    [SerializeField] private float fallForgivenessCounter; //This is the simple counter that will begin the moment the Player2 falls from a ledge
     [SerializeField] private AudioClip deathSound;
     private bool frozen;
     private float launch;
@@ -40,26 +40,26 @@ public class Player : PhysicsObject
     public AudioSource ambienceAudioSource;
 
     //Singleton instantation
-    private static Player instance;
-    public static Player Instance
+    private static Player2 instance;
+    public static Player2 Instance
     {
         get
         {
-            if (instance == null) instance = GameObject.FindObjectOfType<Player>();
+            if (instance == null) instance = GameObject.FindObjectOfType<Player2>();
             return instance;
         }
     }
 
     private void Awake()
     {
-        if (GameObject.Find("New Player")) Destroy(gameObject);
+        if (GameObject.Find("New Player2")) Destroy(gameObject);
     }
 
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-        gameObject.name = "Player";
+        gameObject.name = "Player2";
         UpdateUI();
         SetSpawnPosition();
     }
@@ -74,7 +74,7 @@ public class Player : PhysicsObject
 
             targetVelocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeed + launch, 0);
 
-            //If the player is no longer grounded, begin counting the fallForgivenessCounter
+            //If the Player2 is no longer grounded, begin counting the fallForgivenessCounter
             if (!grounded)
             {
                 fallForgivenessCounter += Time.deltaTime;
@@ -84,7 +84,7 @@ public class Player : PhysicsObject
                 fallForgivenessCounter = 0;
             }
 
-            //If the player presses "Jump" and we're grounded, set the velocity to a jump power value
+            //If the Player2 presses "Jump" and we're grounded, set the velocity to a jump power value
             if (Input.GetButtonDown("Jump") && fallForgivenessCounter < fallForgiveness)
             {
                 //animatorFunctions.EmitParticles1();
@@ -94,7 +94,7 @@ public class Player : PhysicsObject
             }
 
 
-            //Flip the player's localScale.x if the move speed is greater than .01 or less than -.01
+            //Flip the Player2's localScale.x if the move speed is greater than .01 or less than -.01
             if (targetVelocity.x < -.01)
             {
                 transform.localScale = new Vector2(-1, 1);
@@ -111,7 +111,7 @@ public class Player : PhysicsObject
                 //StartCoroutine(ActivateAttack());
             }
 
-            //Check if player health is smaller than or equal to 0.
+            //Check if Player2 health is smaller than or equal to 0.
             if (health <= 0)
             {
                 //StartCoroutine(Die());
@@ -202,7 +202,7 @@ public class Player : PhysicsObject
         // launch = -targetSide * launchPower.x;
         // velocity.y = launchPower.y;
         // //cameraEffects.Shake(5, .5f);
-        // Player.Instance.health -= attackPower;
-        // Player.Instance.UpdateUI();
+        // Player2.Instance.health -= attackPower;
+        // Player2.Instance.UpdateUI();
     }
 }

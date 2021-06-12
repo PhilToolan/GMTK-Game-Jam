@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimatorFunctions : MonoBehaviour
+public class AnimatorFunctions2 : MonoBehaviour
 {
     [Header("Particles")]
     [SerializeField] private ParticleSystem particleSystem1;
@@ -52,52 +52,52 @@ public class AnimatorFunctions : MonoBehaviour
 
     void PlaySound1()
     {
-        Player.Instance.sfxAudioSource.PlayOneShot(sound1[Random.Range(0, sound1.Length)], sound1Volume);
+        Player2.Instance.sfxAudioSource.PlayOneShot(sound1[Random.Range(0, sound1.Length)], sound1Volume);
     }
 
     void PlaySound2()
     {
-        Player.Instance.sfxAudioSource.PlayOneShot(sound2[Random.Range(0, sound2.Length)], sound2Volume);
+        Player2.Instance.sfxAudioSource.PlayOneShot(sound2[Random.Range(0, sound2.Length)], sound2Volume);
     }
 
     void PlaySound3()
     {
-        Player.Instance.sfxAudioSource.PlayOneShot(sound3[Random.Range(0, sound3.Length)], sound3Volume);
+        Player2.Instance.sfxAudioSource.PlayOneShot(sound3[Random.Range(0, sound3.Length)], sound3Volume);
     }
 
     void PlaySound4()
     {
-        Player.Instance.sfxAudioSource.PlayOneShot(sound4[Random.Range(0, sound4.Length)], sound4Volume);
+        Player2.Instance.sfxAudioSource.PlayOneShot(sound4[Random.Range(0, sound4.Length)], sound4Volume);
     }
 
     void PlaySound5()
     {
-        Player.Instance.sfxAudioSource.PlayOneShot(sound5[Random.Range(0,sound5.Length)], sound5Volume);
+        Player2.Instance.sfxAudioSource.PlayOneShot(sound5[Random.Range(0,sound5.Length)], sound5Volume);
     }
 
     void PlaySound6()
     {
-        Player.Instance.sfxAudioSource.PlayOneShot(sound6[Random.Range(0, sound6.Length)], sound6Volume);
+        Player2.Instance.sfxAudioSource.PlayOneShot(sound6[Random.Range(0, sound6.Length)], sound6Volume);
     }
 
     void PlaySound7()
     {
-        Player.Instance.sfxAudioSource.PlayOneShot(sound7[Random.Range(0, sound7.Length)], sound7Volume);
+        Player2.Instance.sfxAudioSource.PlayOneShot(sound7[Random.Range(0, sound7.Length)], sound7Volume);
     }
 
     void PlaySound8()
     {
-        Player.Instance.sfxAudioSource.PlayOneShot(sound8[Random.Range(0, sound8.Length)], sound8Volume);
+        Player2.Instance.sfxAudioSource.PlayOneShot(sound8[Random.Range(0, sound8.Length)], sound8Volume);
     }
 
     void PlaySound9()
     {
-        Player.Instance.sfxAudioSource.PlayOneShot(sound9[Random.Range(0, sound9.Length)], sound9Volume);
+        Player2.Instance.sfxAudioSource.PlayOneShot(sound9[Random.Range(0, sound9.Length)], sound9Volume);
     }
 
     void PlaySound10()
     {
-        Player.Instance.sfxAudioSource.PlayOneShot(sound10[Random.Range(0, sound10.Length)], sound5Volume);
+        Player2.Instance.sfxAudioSource.PlayOneShot(sound10[Random.Range(0, sound10.Length)], sound5Volume);
     }
 
     public void EmitParticles1()
