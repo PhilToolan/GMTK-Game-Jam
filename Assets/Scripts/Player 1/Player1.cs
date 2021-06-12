@@ -72,7 +72,7 @@ public class Player1 : PhysicsObject
             //Lerp (ease) the launch value back to zero at all times
             launch += (0 - launch) * Time.deltaTime * launchRecovery;
 
-            targetVelocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeed + launch, 0);
+            targetVelocity = new Vector2(Input.GetAxis("Horizontal2") * maxSpeed + launch, 0);
 
             //If the Player1 is no longer grounded, begin counting the fallForgivenessCounter
             if (!grounded)
@@ -85,7 +85,7 @@ public class Player1 : PhysicsObject
             }
 
             //If the Player1 presses "Jump" and we're grounded, set the velocity to a jump power value
-            if (Input.GetButtonDown("Jump") && fallForgivenessCounter < fallForgiveness)
+            if (Input.GetButtonDown("Jump2") && fallForgivenessCounter < fallForgiveness)
             {
                 //animatorFunctions.EmitParticles1();
                 velocity.y = jumpPower;
@@ -105,11 +105,11 @@ public class Player1 : PhysicsObject
             }
 
             //If we press "Fire1", then set the attackBox to active. Otherwise, set active to false
-            if (Input.GetButtonDown("Fire1"))
-            {
-                animator.SetTrigger("attack");
-                //StartCoroutine(ActivateAttack());
-            }
+            // if (Input.GetButtonDown("Fire1"))
+            // {
+            //     animator.SetTrigger("attack");
+            //     //StartCoroutine(ActivateAttack());
+            // }
 
             //Check if Player1 health is smaller than or equal to 0.
             if (health <= 0)
