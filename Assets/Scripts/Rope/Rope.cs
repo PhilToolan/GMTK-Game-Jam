@@ -8,6 +8,7 @@ public class Rope : MonoBehaviour
 	public Rigidbody2D hook;
 
 	public GameObject linkPrefab;
+    public GameObject end;
 
 	public Weight weigth;
 
@@ -15,6 +16,8 @@ public class Rope : MonoBehaviour
 
 	public LineRenderer line;
 	List<GameObject> children = new List<GameObject>();
+
+    private int j = 0;
 
 	void Start()
 	{
@@ -47,7 +50,7 @@ public class Rope : MonoBehaviour
 		}
 
         //Line Segments
-		line.positionCount = links;
+		line.positionCount = links + 1;
 	}
 
 	public void GetLinePositions()
@@ -64,10 +67,13 @@ public class Rope : MonoBehaviour
 	{
 		if (line.enabled)
         {
+            j = 0;
 			for (int i = 0; i < links; i++)
 			{
 				line.SetPosition(i, children[i].transform.position);
+                j++;
 			}
+            line.SetPosition(j, end.transform.position);
 		}
 
 	}
