@@ -60,7 +60,7 @@ public class Player1 : PhysicsObject
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         gameObject.name = "Player1";
         UpdateUI();
         SetSpawnPosition();
