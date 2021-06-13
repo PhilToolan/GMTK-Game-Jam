@@ -39,6 +39,9 @@ public class Player2 : PhysicsObject
     public AudioSource musicAudioSource;
     public AudioSource ambienceAudioSource;
 
+    public GameObject barrier1;
+    public GameObject barrier2;
+
     //Singleton instantation
     private static Player2 instance;
     public static Player2 Instance
@@ -118,6 +121,16 @@ public class Player2 : PhysicsObject
             }
         }
 
+        
+
+        if (coinsCollected == 1)
+        {
+            barrier1.SetActive(false);
+        }
+        if (coinsCollected == 2)
+        {
+            barrier2.SetActive(false);
+        }
         //Set each animator float, bool, and trigger so it knows which animation to fire
         // animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
         // animator.SetFloat("velocityY", velocity.y);

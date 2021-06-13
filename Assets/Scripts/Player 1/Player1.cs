@@ -40,6 +40,8 @@ public class Player1 : PhysicsObject
     public AudioSource ambienceAudioSource;
     
     public GameObject barrier1;
+    public GameObject barrier2;
+
 
     //Singleton instantation
     private static Player1 instance;
@@ -123,6 +125,10 @@ public class Player1 : PhysicsObject
         if (coinsCollected == 1)
         {
             barrier1.SetActive(false);
+        }
+        if (coinsCollected == 2)
+        {
+            barrier2.SetActive(false);
         }
 
         //Set each animator float, bool, and trigger so it knows which animation to fire
