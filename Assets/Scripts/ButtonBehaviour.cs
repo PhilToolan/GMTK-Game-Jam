@@ -10,7 +10,7 @@ public class ButtonBehaviour : MonoBehaviour
     [SerializeField] private Transform targetA, targetB;
     public GameObject platform;
 
-    private float speed = 1f; 
+    [SerializeField] private float speed = 1f; 
     private bool switching = false;
 
 
